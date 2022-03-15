@@ -1,13 +1,13 @@
 
 
 class GildedRoseRef {
-    Item[] items;
+    private Item[] items;
 
     public GildedRoseRef(Item[] items) {
         this.items = items;
     }
 
-    public void checkQualityLimits() {
+    public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
 
             switch (items[i].name){
@@ -109,6 +109,17 @@ class GildedRoseRef {
         item.sellIn -= 1;
         return item;
     }
+
+
+    public Item[] getItems() {
+        return items;
+    }
+
+    public void setItems(Item[] items) {
+        this.items = items;
+    }
+
+
 
 
 }
