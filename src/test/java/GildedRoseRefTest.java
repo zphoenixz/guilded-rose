@@ -1,8 +1,8 @@
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-public class GildedRoseTest {
+public class GildedRoseRefTest {
 
     @Test
     public void shouldReduceQualityTwiceWhenSellInPasses() throws Exception{
@@ -10,8 +10,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Item1", 0, 10),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
@@ -21,8 +21,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Item2", 0, 1),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
@@ -34,8 +34,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Aged Brie", 1, 10),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
         assertEquals(expectedSellIn, guildedRose.items[0].sellIn);
     }
@@ -47,8 +47,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Aged Brie", 10, 50),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
@@ -58,8 +58,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Sulfuras, Hand of Ragnaros", 0, 80),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
@@ -69,8 +69,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Sulfuras, Hand of Ragnaros", 10, 3),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedSellIn, guildedRose.items[0].sellIn);
     }
 
@@ -81,8 +81,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
@@ -93,8 +93,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 6, 10),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
@@ -105,8 +105,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
@@ -117,8 +117,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Conjured", 2, 2),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
@@ -129,8 +129,8 @@ public class GildedRoseTest {
         Item[] testItems = {
                 new Item("Conjured", 0, 4),
         };
-        GildedRose guildedRose = new GildedRose(testItems);
-        guildedRose.updateQuality();
+        GildedRoseRef guildedRose = new GildedRoseRef(testItems);
+        guildedRose.checkQualityLimits();
         assertEquals(expectedQuality, guildedRose.items[0].quality);
     }
 
